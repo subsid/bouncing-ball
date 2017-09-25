@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebGL ball</title>
+    <meta charset="UTF-8">
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/three.min.js"></script>
+    <script src="js/lib/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css" />
+  </head>
+  <body>
+    <div class="ui form">
+      <div class="fields">
+        <a class="ui primary mini button" href="#" onclick="stopAll();BouncingBall.start(); return false;">Restart</a>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Step Size
+            </div>
+            <input type="number" name="Step Size" id="step-size" value="0.2" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Sphere Radius
+            </div>
+            <input type="number" name="Sphere Radius" id="sphere-radius" value="60" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Sphere Mass
+            </div>
+            <input type="number" name="Sphere Mass" id="sphere-mass" value="20" />
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Gravity
+            </div>
+            <input type="number" name="Gravity" id="gravity" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Air resistance
+            </div>
+            <input type="number" name="Air Resistance" id="air-resistance" value="0.0" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Friction Mu
+            </div>
+            <input type="number" name="Friction" id="friction" value="0.0" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Restitution
+            </div>
+            <input type="number" name="Restitution" id="restitution" value="1" />
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Velocity
+            </div>
+            <div class="ui label">
+              X
+            </div>
+            <input type="number" name="X" id="velocity-x" />
+            <div class="ui label">
+              Y
+            </div>
+            <input type="number" name="Y" id="velocity-y" />
+            <div class="ui label">
+              Z
+            </div>
+            <input type="number" name="Z" id="velocity-z" />
+          </div>
+          <div class="ui labeled mini input">
+            <div class="ui label">
+              Position
+            </div>
+            <div class="ui label">
+              X
+            </div>
+            <input type="number" name="X" id="position-x" value="0" />
+            <div class="ui label">
+              Y
+            </div>
+            <input type="number" name="Y" id="position-y" value="0" />
+            <div class="ui label">
+              Z
+            </div>
+            <input type="number" name="Z" id="position-z" value="0" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="render-area">
+    </div>
+    <script src="js/bouncingBall.js"></script>
+    <script>
+    window.animationId = null;
+
+    jQuery(document).ready(function() {
+        BouncingBall.start();
+    });
+
+    function stopAll() {
+      BouncingBall.stop()
+    }
+    </script>
+  </body>
+</html>
+
